@@ -12,13 +12,6 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-<!--
-      <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>...</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-      </div> -->
-
 
       <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
@@ -38,7 +31,7 @@
                     <ul class="nav navbar-nav navbar-right">
                       <li><a href="#" data-toggle="modal" data-target="#-signup-modal" id="-signup-button">Login or Signup</a></li>
                       <li class="dropdown">
-                      <a id="locations-dropdown-button" href="#" class="dropdown-toggle hidden" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Locations<span class="caret"></span></a>
+                      <a id="locations-dropdown-button" href="#" class="dropdown-toggle hidden" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Albums<span class="caret"></span></a>
                       <ul id="locations-dropdown" class="dropdown-menu">
                         <li class="dropdown-header">No albums yet!</li>
                       </ul>
@@ -164,5 +157,102 @@
                         </div>
                         <!-- End change password modal -->
 
+                        <!-- JUMBOTRON START -->
+                        <div class="jumbotron">
+                          <h1>Photo Gathering</h1>
+                          <p>Type in a keyword and find gorgeous images to build albums for any mood, occasion, or season</p>
+
+  <!-- JUMBOTRON END -->
+
+
+  <p><button type="button" class="btn btn-default btn btn-lg" data-toggle="modal" data-target="#create-album-modal">
+               Add Album
+             </button></p>
+
+               <!-- Add Album MODAL -->
+<div class="modal fade" id="create-album-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Add Album</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+      </div>
+      <div class="modal-body">
+        <form id="create-album">
+          <div class="form group">
+            <label class="col-sm-3">Album Title: </label>
+              <div class="col-sm-9">
+            <input class="create-album" type="text" name="album[title]" value="" placeholder="album title">
+          </div>
+      </div>
+      <div class="form group">
+        <label class="col-sm-3">Comment: </label>
+        <div class="col-sm-9">
+          <input class="create-album" type="text" name="album[comment]" value="" placeholder="comment">
+        </div>
+      </div>
+    <div class="form group">
+      <label class="col-sm-3">Date: </label>
+      <div class="col-sm-9">
+        <input class="create-album" type="text" name="album[date]" value="" placeholder="date">
+      </div>
+    </div>
+</div>
+<div class="form group">
+  <div class="col-sm-offset-3 col-sm-9">
+    <button type="submit" class="btn btn-default" name="submit" value="Add Album!">Add Album</button>
+  </div>
+</div>
+</body>
+</div>
+</div>
+</div>
+<div class="modal fade" id="update-album-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title" id="exampleModalLabel">Update Album</h3>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <div class="modal-body">
+      <form id="update-album">
+        <div class="form group">
+          <div class="col-sm-10">
+            <input class="update-album_id hidden" type="text" name="album[id]" value="" placeholder="album id">
+          </div>
+        </div>
+        <div class="form group">
+          <label class="col-sm-3">Album Title: </label>
+          <div class="col-sm-9">
+            <input class="update-album-title" type="text" name="album[title]" value="" placeholder="album title">
+          </div>
+        </div>
+        <div class="form group">
+          <label class="col-sm-3">Comment: </label>
+          <div class="col-sm-9">
+            <input class="update-comment" type="text" name="album[comment]" value="" placeholder="comment">
+          </div>
+        </div>
+        <div class="form group">
+          <label class="col-sm-3">Date: </label>
+          <div class="col-sm-9">
+            <input class="update-date" type="text" name="album[date]" value="" placeholder="date">
+          </div>
+        </div>
+        <div class="form group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-default" name="submit" value="Add Album!">Add Album</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
     </body>
 </html>

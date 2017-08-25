@@ -1,2 +1,31 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+.jumbotron {
+  padding-top: 10%;
+  padding-bottom: 20%;
+  text-align: center;
+  background-color: lavender;
+
+}
+
+//
+// .modal {
+//     text-align:center;
+// }
+#create-album-modal {
+  // background-image: #
+
+  // .modal-content {
+  //     /* 80% of window height */
+  //     height: 80%;
+  // }
+.modal-dialog,
+.modal-content,
+  .modal-body {
+      /* 100% = dialog height, 120px = header + footer */
+      max-height: 500px;
+      overflow-y: scroll;
+  }
+}
