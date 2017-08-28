@@ -1,0 +1,9 @@
+{{#each photos as |photo|}}
+  <div class="col col-md-3 grid" data-photo-id="{{photo.id}}" data-photo-title="{{photo.title}}" data-photo-comments="{{photo.comments}}" >
+    <h3> {{photo.title}}</h3>
+    <p> {{photo.comments}}</p>
+    <button type="button" class="btn btn-primary editAlbumBtn">Edit Photos</button>
+    <button type="button" class="btn btn-danger deleteAlbumBtn">Delete Photos</button>
+  </div>
+
+{{/each}}
