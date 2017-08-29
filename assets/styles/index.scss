@@ -5,8 +5,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .jumbotron {
   padding-top: 10%;
   padding-bottom: 20%;
-  text-align: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url('./images/dog.jpg') no-repeat center center fixed;
+background-size: cover;
   height: 500px;
+  color: white;
 }
