@@ -22,6 +22,7 @@ const signInSuccess = (response) => {
   $('#locations-dropdown-button').removeClass('hidden')
   $('#welcome-header').addClass('hidden')
   $('#signedin-header').removeClass('hidden')
+  $('#jumbotron').addClass('show')
 }
 
 const signInError = (response) => {

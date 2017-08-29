@@ -1,258 +1,224 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title></title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#-main-navbar-collapse" aria-expanded="false">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#-main-navbar-collapse" aria-expanded="false">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <span class="navbar-brand" href="#">Photo</span>
-                  </div>
+        <span class="navbar-brand" href="#">Photo</span>
+      </div>
 
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="-main-navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#" data-toggle="modal" data-target="#-signup-modal" id="-signup-button">Login or Signup</a></li>
-                      <li class="dropdown">
-                      <a id="locations-dropdown-button" href="#" class="dropdown-toggle hidden" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Albums<span class="caret"></span></a>
-                      <ul id="locations-dropdown" class="dropdown-menu">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="-main-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" data-toggle="modal" data-target="#-signup-modal" id="-signup-button">Login or Signup</a></li>
+          <!-- <li class="dropdown">
+                      <a id="albums-dropdown-button" href="#" class="dropdown-toggle hidden" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Albums<span class="caret"></span></a>
+                      <ul id="albums-dropdown" class="dropdown-menu">
                         <li class="dropdown-header">No albums yet!</li>
                       </ul>
-                    </li>
-                      <li><a class="hidden" id="-logout-button" href="#">Logout</a></li>
-                      <li><a class="hidden" id="-changepwd-button" href="#" data-toggle="modal" data-target="#-changepwd-modal">Change Password</a></li>
-                    </ul>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-              </nav>
-              <!-- NAVBAR END -->
-              <!-- MODALS ONLY BEYOND THIS POINT -->
-                      <!-- ============================= -->
-                      <!-- Sign up / log in modal -->
-                        <div class="modal fade" id="-signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <!-- Sign in header-->
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">
+                    </li> -->
+          <li><a class="hidden" id="-logout-button" href="#">Logout</a></li>
+          <li><a class="hidden" id="-changepwd-button" href="#" data-toggle="modal" data-target="#-changepwd-modal">Change Password</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- NAVBAR END -->
+  <!-- MODALS ONLY BEYOND THIS POINT -->
+  <!-- ============================= -->
+  <!-- Sign up / log in modal -->
+  <div class="modal fade" id="-signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Sign in header-->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
                                    <span aria-hidden="true">&times;</span>
                                    <span class="sr-only">Close</span>
                                 </button>
-                                <h4 class="modal-title" id="-signin-modal-title">
+          <h4 class="modal-title" id="-signin-modal-title">
                                     Log in
                                 </h4>
-                                <h5 class="modal-title modal-error hidden" id="sign-in-error">An error has occured!</h5>
-                              </div>
-                              <!-- Sign in Body -->
-                              <div class="modal-body">
-                                <form class="form-horizontal" id="-signin-modal-form" role="signup-form">
-                                  <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="-signin-modal-email">Username</label>
-                                    <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="-signin-modal-email" placeholder="Username" name="credentials[email]" value=""/>
-                                    </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="-signin-modal-pwd">Password</label>
-                                    <div class="col-sm-10">
-                                      <input type="password" class="form-control" id="-signin-modal-pwd" placeholder="Password" name="credentials[password]" value=""/>
-                                    </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                      <button type="submit" class="btn btn-default">Log in</button>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                              <!-- Sign up Header -->
-                              <div class="modal-header">
-                                <h4 class="modal-title" id="-signup-modal-title">
+          <h5 class="modal-title modal-error hidden" id="sign-in-error">An error has occured!</h5>
+        </div>
+        <!-- Sign in Body -->
+        <div class="modal-body">
+          <form class="form-horizontal" id="-signin-modal-form" role="signup-form">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="-signin-modal-email">Username</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="-signin-modal-email" placeholder="Username" name="credentials[email]" value="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="-signin-modal-pwd">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="-signin-modal-pwd" placeholder="Password" name="credentials[password]" value="" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Log in</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Sign up Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" id="-signup-modal-title">
                                     Sign up
                                 </h4>
-                                <h5 class="modal-title modal-error hidden" id="sign-up-error">An error has occured!</h5>
-                              </div>
-                              <!-- Sign up Body -->
-                              <div class="modal-body">
-                                <form class="form-horizontal" id="-signup-modal-form" role="signup-form">
-                                  <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="-signup-modal-email">Username</label>
-                                    <div class="col-sm-10">
-                                      <input type="text" class="form-control" id="-signup-modal-email" placeholder="Username" name="credentials[email]"/>
-                                    </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="-signup-modal-pwd">Password</label>
-                                    <div class="col-sm-10">
-                                      <input type="password" class="form-control" id="-signup-modal-pwd" placeholder="Password" name="credentials[password]" />
-                                    </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                      <button type="submit" class="btn btn-default">Sign up</button>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End sign up modal -->
-                        <!-- Change password modal -->
-                        <div class="modal fade" id="-changepwd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <!-- Modal Header -->
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">
+          <h5 class="modal-title modal-error hidden" id="sign-up-error">An error has occured!</h5>
+        </div>
+        <!-- Sign up Body -->
+        <div class="modal-body">
+          <form class="form-horizontal" id="-signup-modal-form" role="signup-form">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="-signup-modal-email">Username</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="-signup-modal-email" placeholder="Username" name="credentials[email]" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="-signup-modal-pwd">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="-signup-modal-pwd" placeholder="Password" name="credentials[password]" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End sign up modal -->
+  <!-- Change password modal -->
+  <div class="modal fade" id="-changepwd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
                                    <span aria-hidden="true">&times;</span>
                                    <span class="sr-only">Close</span>
                                 </button>
-                                <h4 class="modal-title" id="-changepwd-modal-title">
+          <h4 class="modal-title" id="-changepwd-modal-title">
                                     Change password
                                 </h4>
-                                <h5 class="modal-title modal-error hidden" id="changepwd-error">An error has occured!</h5>
-                              </div>
-                              <!-- Modal Body -->
-                              <div class="modal-body">
-                                <form class="form-horizontal" id="-changepwd-modal-form" role="signup-form">
-                                  <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="-changepwd-modal-email">Old</label>
-                                    <div class="col-sm-10">
-                                      <input type="password" class="form-control" id="-changepwd-modal-email" placeholder="Old Password" name="passwords[old]"/>
-                                    </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="-changepwd-modal-pwd">New</label>
-                                    <div class="col-sm-10">
-                                      <input type="password" class="form-control" id="-changepwd-modal-pwd" placeholder="New Password" name="passwords[new]" />
-                                    </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                      <button type="submit" class="btn btn-default">Change</button>
-                                    </div>
-                                  </div>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End change password modal -->
-
-                        <!-- JUMBOTRON START -->
-                        <div class="jumbotron">
-                          <h1>Photo Gathering</h1>
-                          <p>Type in a keyword and find gorgeous images to build albums for any mood, occasion, or season</p>
-
-  <!-- JUMBOTRON END -->
-
-
-  <p><button type="button" class="btn btn-default btn btn-lg" data-toggle="modal" data-target="#create-album-modal">
-               Add Album
-             </button></p>
-
-               <!-- Add Album MODAL -->
-<div class="modal fade" id="create-album-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Add Album</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-      </div>
-      <div class="modal-body">
-        <form id="create-album">
-          <div class="form group">
-            <label class="col-sm-3">Album Title: </label>
-              <div class="col-sm-9">
-            <input class="create-album" type="text" name="album[title]" value="" placeholder="album title">
-          </div>
-      </div>
-      <div class="form group">
-        <label class="col-sm-3">Comment: </label>
-        <div class="col-sm-9">
-          <input class="create-album" type="text" name="album[comment]" value="" placeholder="comment">
+          <h5 class="modal-title modal-error hidden" id="changepwd-error">An error has occured!</h5>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form class="form-horizontal" id="-changepwd-modal-form" role="signup-form">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="-changepwd-modal-email">Old</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="-changepwd-modal-email" placeholder="Old Password" name="passwords[old]" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="-changepwd-modal-pwd">New</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="-changepwd-modal-pwd" placeholder="New Password" name="passwords[new]" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Change</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-    <div class="form group">
-      <label class="col-sm-3">Date: </label>
-      <div class="col-sm-9">
-        <input class="create-album" type="text" name="album[date]" value="" placeholder="date">
+    </div>
+  </div>
+  <!-- End change password modal -->
+
+  <!-- JUMBOTRON START -->
+  <div class="jumbotron">
+    <h1>Photo Book</h1>
+    <p>Add an album</p>
+
+    <!-- JUMBOTRON END -->
+
+  </div>
+  <div class="row">
+    <div class="col col-xs-12">
+      <button oninvalid="" id="createAlbumBtn" type="button" class="btn btn-default optionBtn" data-toggle="modal" data-target="#createAlbumModal">
+ Create Album
+</button>
+      <!-- <button id="CreateAlbumBtn" type="button" class="btn btn-success optionBtn">Create Album</button> -->
+    </div>
+  </div>
+
+  <div class="col col-sm-8 col-md-8">
+    <div id="content" class="row">
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="createAlbumModal" tabindex="-1" role="dialog" aria-labelledby="AddShoeModalLabel" data-backdrop="true" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create a Album</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+        </div>
+        <div class="modal-body">
+          <h3>Album Title</h3>
+          <form id="createAlbumForm">
+            <div class="form-group row">
+              <label for="shoeName" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" id="addAlbTitle" name="album[title]" class="form-control" placeholder="Title">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="albumComments" class="col-sm-2 col-form-label">Comments</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="addAlbCom" name="album[comments]" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Create Album</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-</div>
-<div class="form group">
-  <div class="col-sm-offset-3 col-sm-9">
-    <button type="submit" class="btn btn-default" name="submit" value="Add Album!">Add Album</button>
   </div>
-</div>
+
 </body>
-</div>
-</div>
-</div>
-<div class="modal fade" id="update-album-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3 class="modal-title" id="exampleModalLabel">Update Album</h3>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-    </div>
-    <div class="modal-body">
-      <form id="update-album">
-        <div class="form group">
-          <div class="col-sm-10">
-            <input class="update-album_id hidden" type="text" name="album[id]" value="" placeholder="album id">
-          </div>
-        </div>
-        <div class="form group">
-          <label class="col-sm-3">Album Title: </label>
-          <div class="col-sm-9">
-            <input class="update-album-title" type="text" name="album[title]" value="" placeholder="album title">
-          </div>
-        </div>
-        <div class="form group">
-          <label class="col-sm-3">Comment: </label>
-          <div class="col-sm-9">
-            <input class="update-comment" type="text" name="album[comment]" value="" placeholder="comment">
-          </div>
-        </div>
-        <div class="form group">
-          <label class="col-sm-3">Date: </label>
-          <div class="col-sm-9">
-            <input class="update-date" type="text" name="album[date]" value="" placeholder="date">
-          </div>
-        </div>
-        <div class="form group">
-          <div class="col-sm-offset-3 col-sm-9">
-            <button type="submit" class="btn btn-default" name="submit" value="Add Album!">Add Album</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-    </body>
+
 </html>

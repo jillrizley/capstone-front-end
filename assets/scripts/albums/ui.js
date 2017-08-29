@@ -1,19 +1,20 @@
 'use strict'
 
-const success = (data) => {
-  console.log(data)
+const onAddSuccess = function (data) {
+  $('#createAlbumModal').modal('hide')
+  $('#content').empty()
+  $('#successNotify').css('display', 'block').text('Your album is created.')
+  $('#errorNotify').css('display', 'none')
+}
+const onAddError = function (error) {
+  console.log(error)
+  $('#createAlbumModal').modal('hide')
+  $('#content').empty()
+  $('#errorNotify').css('display', 'block').text('There was a problem creating your album.')
+  $('#successNotify').css('display', 'none')
 }
 
-const failure = (error) => {
-  console.error(error)
-}
-
-const addAlbumSuccess = (data) => {
-  console.log('addAlbumSuccess data = ', data)
-}
-
-module.export = {
-  success,
-  failure,
-  addAlbumSuccess
+module.exports = {
+  onAddSuccess,
+  onAddError
 }

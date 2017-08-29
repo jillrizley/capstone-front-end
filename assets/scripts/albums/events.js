@@ -1,15 +1,22 @@
 'use strict'
+const api = require('./api.js')
+const ui = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
 
-const api = require('./api')
-const ui = require('./ui')
+const addAlbum = function (e) {
+  e.preventDefault()
+  const data = getFormFields(e.target)
+  // console.log(data)
+  api.add(data)
+    .then(ui.onAddSuccess)
+    .catch(ui.onAddError)
+}
 
-const onAddAlbum = function () {
-  console.log('hello')
-  api.addAlbum()
-    .done(ui.addAlbumSuccess)
-    .fail(ui.failure)
+const addHandlers = () => {
+  $('#createAlbumForm').on('submit', addAlbum)
 }
 
 module.exports = {
-  onAddAlbum
+  addAlbum,
+  addHandlers
 }
