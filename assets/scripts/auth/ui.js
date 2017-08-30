@@ -1,5 +1,4 @@
 const store = require('../store')
-
 const albumEvents = require('../albums/events')
 
 const failure = (response) => {
@@ -45,7 +44,7 @@ const signOutSuccess = (response) => {
   $('#location-display').addClass('hidden')
   $('#welcome-header').removeClass('hidden')
   $('#signedin-header').addClass('hidden')
-  forceSignIn()
+  // forceSignIn()
 }
 
 const signOutError = (response) => {
@@ -62,11 +61,11 @@ const changePasswordError = (response) => {
   }, 1500)
 }
 
-const forceSignIn = function () {
-  if (!store.user) {
-    $('#-signup-modal').modal('show')
-  }
-}
+// const forceSignIn = function () {
+//   if (!store.user) {
+//     $('#-signup-modal').modal('show')
+//   }
+// }
 
 module.exports = {
   signUpSuccess,
@@ -77,6 +76,6 @@ module.exports = {
   signOutError,
   changePasswordSuccess,
   changePasswordError,
-  forceSignIn,
+  // forceSignIn,
   failure
 }

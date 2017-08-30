@@ -1,6 +1,6 @@
 'use strict'
 const albumTemplate = require('../templates/album.hbs')
-const albumsTemplate = require('../templates/albums.hbs')
+// const albumsTemplate = require('../templates/albums.hbs')
 
 const onAddSuccess = function (data) {
   $('#createAlbumModal').modal('hide')
@@ -16,14 +16,19 @@ const onAddError = function (error) {
   $('#successNotify').css('display', 'none')
 }
 
-const onShowSuccess = function(data) {
+const onShowSuccess = function (data) {
   $('#content').html('')
-  data.albums.map(function(album){
+  data.albums.map(function (album) {
     $('#content').append(albumTemplate(album))
   })
 }
 
-const onDestroySuccess = function() {
+const onUpdateSuccess = function (data) {
+  $('#editAlbumModal').modal('hide')
+  $('#content').append(albumTemplate(data.album))
+}
+
+const onDestroySuccess = function () {
   $(this).closest('div').remove()
 }
 
@@ -31,5 +36,6 @@ module.exports = {
   onAddSuccess,
   onAddError,
   onShowSuccess,
-  onDestroySuccess
+  onDestroySuccess,
+  onUpdateSuccess
 }
