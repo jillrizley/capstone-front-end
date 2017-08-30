@@ -10,7 +10,7 @@ body {
   display: none;
 }
 
-. addPhotoForm,
+.addPhotoForm,
 #editAlbumModal,
 #createAlbumModal {
   color: black;
@@ -20,14 +20,28 @@ body {
   background: url('./images/dog.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
-  height: 500px;
+  height: 700px;
   padding-bottom: 20%;
   padding-top: 10%;
+
 }
 
 .grid {
-  border: 1px solid black;
+  border: 1px solid #000;
   margin: 5px;
+  padding-left: 40%;
   margin-top: 5px;
-  padding: 5px;
+  padding: 10px;
+}
+
+li {
+}
+
+a {
+  color: #FFF;
+  font-size: 18px;
+}
+
+a:hover {
+  color: green;
 }

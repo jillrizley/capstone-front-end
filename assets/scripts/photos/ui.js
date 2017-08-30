@@ -19,12 +19,9 @@ const onAddError = function (error) {
   console.log(error)
   $('#createPhotoModal').modal('hide')
   $('#content').empty()
-  $('#errorNotify').css('display', 'block').text('There was a problem creating your photo.')
-  $('#successNotify').css('display', 'none')
 }
 
 const onShowSuccess = function (data) {
-  $('#content').html('')
   data.photo.map(function (photo) {
     $('#content').append(photoTemplate(data.photo))
   })
