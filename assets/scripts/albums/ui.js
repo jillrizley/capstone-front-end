@@ -18,7 +18,11 @@ const onAddError = function (error) {
 
 const onShowSuccess = function (data) {
   data.albums.map(function (album) {
+    $('#content').html('')
+    $('#content').show()
     $('#content').append(albumTemplate(album))
+  // const publicFeedHtml = publicFeedHandlebars({ events: data.events })
+  // $('.feed').append(publicFeedHtml)
   })
 }
 
