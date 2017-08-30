@@ -9,20 +9,20 @@ const getPhotosByAlbum = function () {
     .then(ui.onGetSuccess.bind(this))
     .catch(ui.onAddError)
 }
+//
+// const showAlbums = function () {
+//   api.index()
+//     .then(ui.onShowSuccess)
+// }
 
-const showAlbums = function () {
-  api.index()
-    .then(ui.onShowSuccess)
-}
+// const deleteAlbum = function () {
+//   const id = $(this).closest('div').data('album-id')
+//   console.log( `Deleting ...${id}`)
+//   api.destroy(id)
+//     .then(ui.onDestroySuccess.bind(this))
+// }
 
-const deleteAlbum = function () {
-  const id = $(this).closest('div').data('album-id')
-  console.log( `Deleting ...${id}`)
-  api.destroy(id)
-    .then(ui.onDestroySuccess.bind(this))
-}
-
-const addPhoto = function(e) {
+const addPhoto = function (e) {
   e.preventDefault()
   let data = getFormFields(e.target)
   data.photo.albumId = $(this).closest('[data-album-id]').data('album-id')

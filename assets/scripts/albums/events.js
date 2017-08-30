@@ -18,7 +18,7 @@ const showAlbums = function () {
     .then(ui.onShowSuccess)
 }
 
-const updateAlbum = function(e) {
+const updateAlbum = function (e) {
   e.preventDefault()
   const data = getFormFields(e.target)
   api.update(data, data.album.id)
@@ -27,7 +27,7 @@ const updateAlbum = function(e) {
 
 const deleteAlbum = function () {
   const id = $(this).closest('div').data('album-id')
-  console.log( `Deleting ...${id}`)
+  console.log(`Deleting ...${id}`)
   api.destroy(id)
     .then(ui.onDestroySuccess.bind(this))
 }
@@ -36,7 +36,7 @@ const addHandlers = () => {
   $('#createAlbumForm').on('submit', addAlbum)
   $('#editAlbumForm').on('submit', updateAlbum)
   $('#content').on('click', '.deleteAlbumBtn', deleteAlbum)
-  $('#content').on('click', '.editAlbumBtn', function() {
+  $('#content').on('click', '.editAlbumBtn', function () {
     $('#editAlbumModal').modal()
     let albumId = $(this).closest('[data-album-id]').data('album-id')
     $('#updateAlbumId').val(albumId)
