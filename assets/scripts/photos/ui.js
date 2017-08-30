@@ -1,12 +1,18 @@
 'use strict'
-const albumTemplate = require('../templates/album.hbs')
-const albumsTemplate = require('../templates/albums.hbs')
+const photoInputTemplate = require('../templates/photoInput.hbs')
+const photoTemplate = require('../templates/photo.hbs')
+
+const onGetSuccess = function(data) {
+  let $container = $(this).closest('[data-album-id]');
+  data.photos.map((photo)=>{
+    console.log(photo)
+    $container.append(photoTemplate(photo))
+  })
+}
 
 const onAddSuccess = function (data) {
-  $('#createAlbumModal').modal('hide')
-  $('#content').append(albumTemplate(data.album))
-  $('#successNotify').css('display', 'block').text('Your album is created.')
-  $('#errorNotify').css('display', 'none')
+  console.log('Photo added to album')
+  $(this).remove()
 }
 const onAddError = function (error) {
   console.log(error)
@@ -23,6 +29,11 @@ const onShowSuccess = function(data) {
   })
 }
 
+const addPhotoInput = function() {
+  console.log('Adding photo input')
+  $(this).siblings('.photoUrls').append(photoInputTemplate)
+}
+
 const onDestroySuccess = function() {
   $(this).closest('div').remove()
 }
@@ -31,5 +42,7 @@ module.exports = {
   onAddSuccess,
   onAddError,
   onShowSuccess,
-  onDestroySuccess
+  onDestroySuccess,
+  addPhotoInput,
+  onGetSuccess
 }
