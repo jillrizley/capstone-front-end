@@ -1,10 +1,9 @@
 {{#each albums as |album|}}
-  <div class="col col-md-3 grid" data-album-id="{{album.id}}" data-album-title="{{album.title}}" data-album-comments="{{album.comments}}" >
+  <div class="col col-md-3 grid" data-album-id="{{album.id}}">
     <h3> {{album.title}}</h3>
     <p> {{album.comments}}</p>
     <button type="button" class="btn btn-primary viewAlbumBtn">View Album</button>
     <button type="button" class="btn btn-primary editAlbumBtn">Edit Album</button>
     <button type="button" class="btn btn-danger deleteAlbumBtn">Delete Album</button>
   </div>
-
 {{/each}}

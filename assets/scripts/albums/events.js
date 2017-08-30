@@ -12,11 +12,17 @@ const addAlbum = function (e) {
     .catch(ui.onAddError)
 }
 
+const showAlbums = function() {
+  api.index()
+    .then(ui.onShowSuccess)
+}
+
 const addHandlers = () => {
   $('#createAlbumForm').on('submit', addAlbum)
 }
 
 module.exports = {
   addAlbum,
-  addHandlers
+  addHandlers,
+  showAlbums
 }

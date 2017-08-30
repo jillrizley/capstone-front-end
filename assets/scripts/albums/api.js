@@ -3,7 +3,6 @@ const store = require('../store')
 const config = require('../config.js')
 
 const add = function (data) {
-  console.log('hello')
   return $.ajax({
     method: 'POST',
     url: config.apiOrigin + '/albums',
@@ -46,7 +45,10 @@ const update = function (data, id) {
 const index = function () {
   return $.ajax({
     url: config.apiOrigin + '/albums',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

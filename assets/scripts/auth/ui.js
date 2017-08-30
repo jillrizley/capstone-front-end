@@ -1,5 +1,7 @@
 const store = require('../store')
 
+const albumEvents = require('../albums/events')
+
 const failure = (response) => {
 }
 
@@ -22,7 +24,7 @@ const signInSuccess = (response) => {
   $('#locations-dropdown-button').removeClass('hidden')
   $('#welcome-header').addClass('hidden')
   $('#signedin-header').removeClass('hidden')
-  $('#jumbotron').addClass('show')
+  albumEvents.showAlbums()
 }
 
 const signInError = (response) => {
