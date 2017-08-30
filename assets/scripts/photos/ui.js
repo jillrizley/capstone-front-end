@@ -11,19 +11,21 @@ const onGetSuccess = function (data) {
 }
 
 const onAddSuccess = function (data) {
-  $('#content').append(photoTemplate(data.photo))
+  console.log('Photo added to album')
   $(this).remove()
 }
-
 const onAddError = function (error) {
   console.log(error)
-  $('#createPhotoModal').modal('hide')
+  $('#createAlbumModal').modal('hide')
   $('#content').empty()
+  $('#errorNotify').css('display', 'block').text('There was a problem creating your album.')
+  $('#successNotify').css('display', 'none')
 }
 
 const onShowSuccess = function (data) {
-  data.photo.map(function (photo) {
-    $('#content').append(photoTemplate(data.photo))
+  $('#content').html('')
+  data.albums.map(function (album) {
+    $('#content').append(photoTemplate(album))
   })
 }
 
@@ -31,16 +33,16 @@ const addPhotoInput = function () {
   console.log('Adding photo input')
   $(this).siblings('.photoUrls').append(photoInputTemplate)
 }
-//
-// const onDestroySuccess = function () {
-//   $(this).closest('div').remove()
-// }
+
+const onDestroySuccess = function () {
+  $(this).closest('div').remove()
+}
 
 module.exports = {
   onAddSuccess,
   onAddError,
-  // onDestroySuccess,
+  onShowSuccess,
+  onDestroySuccess,
   addPhotoInput,
-  onGetSuccess,
-  onShowSuccess
+  onGetSuccess
 }

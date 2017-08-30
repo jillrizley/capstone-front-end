@@ -17,21 +17,15 @@ const onAddError = function (error) {
 }
 
 const onShowSuccess = function (data) {
+  $('#content').html('')
   data.albums.map(function (album) {
-    $('#content').html('')
-    $('#content').show()
     $('#content').append(albumTemplate(album))
-  // const publicFeedHtml = publicFeedHandlebars({ events: data.events })
-  // $('.feed').append(publicFeedHtml)
   })
 }
 
 const onUpdateSuccess = function (data) {
-  $('#content').html('')
   $('#editAlbumModal').modal('hide')
-  const updateTemplate = albumTemplate({ album: data.album })
-  $('#content').append(updateTemplate)
-  // $('#content').append(albumTemplate(data.album))
+  $('#content').append(albumTemplate(data.album))
 }
 
 const onDestroySuccess = function () {
