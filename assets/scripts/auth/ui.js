@@ -21,8 +21,9 @@ const signInSuccess = (response) => {
   $('#-logout-button').removeClass('hidden')
   $('#-changepwd-button').removeClass('hidden')
   $('#locations-dropdown-button').removeClass('hidden')
-  $('#welcome-header').addClass('hidden')
   $('#signedin-header').removeClass('hidden')
+  $('#createAlbumBtn').removeClass('hidden')
+  $('#needsSignInSuccess').show()
   albumEvents.showAlbums()
 }
 
@@ -42,8 +43,8 @@ const signOutSuccess = (response) => {
   $('#-changepwd-button').addClass('hidden')
   $('#locations-dropdown-button').addClass('hidden')
   $('#location-display').addClass('hidden')
-  $('#welcome-header').removeClass('hidden')
   $('#signedin-header').addClass('hidden')
+  $('#needsSignInSuccess').hide()
   // forceSignIn()
 }
 
