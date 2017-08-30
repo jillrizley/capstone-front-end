@@ -24,6 +24,7 @@ const signInSuccess = (response) => {
   $('#signedin-header').removeClass('hidden')
   $('#createAlbumBtn').removeClass('hidden')
   $('#needsSignInSuccess').show()
+  $('#content').show()
   albumEvents.showAlbums()
 }
 
@@ -45,6 +46,7 @@ const signOutSuccess = (response) => {
   $('#location-display').addClass('hidden')
   $('#signedin-header').addClass('hidden')
   $('#needsSignInSuccess').hide()
+  $('#content').hide()
   // forceSignIn()
 }
 
