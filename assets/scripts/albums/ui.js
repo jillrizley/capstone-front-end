@@ -7,6 +7,7 @@ const onAddSuccess = function (data) {
   $('#content').append(albumTemplate(data.album))
   $('#successNotify').css('display', 'block').text('Your album is created.')
   $('#errorNotify').css('display', 'none')
+  $('html, body').animate({scrollTop: $(document).height()}, 'slow')
 }
 const onAddError = function (error) {
   console.log(error)
