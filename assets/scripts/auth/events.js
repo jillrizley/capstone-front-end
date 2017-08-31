@@ -26,8 +26,6 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
-    // .then(() => locationsApi.getLocations())
-    // .then(locationsUi.getLocationsSuccess)
     .catch(ui.signInError)
 }
 
