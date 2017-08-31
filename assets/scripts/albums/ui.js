@@ -25,7 +25,6 @@ const onShowSuccess = function (data) {
 const onUpdateSuccess = function (data) {
   $('#editAlbumModal').modal('hide')
   $('#content').append(albumTemplate(data.album))
-  $('#editAlbumForm')[0].reset()
 }
 
 const onDestroySuccess = function () {

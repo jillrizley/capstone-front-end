@@ -1,7 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+#-signup-button {
+  color: white;
+  font-size: 16px;
+}
+
 body {
+  font-family: 'Roboto Condensed', sans-serif;
   background-color: grey;
 }
 
@@ -31,6 +37,8 @@ body {
 }
 
 .grid {
+  background-color: #FAFAFA;
+  color: grey;
   border: 1px solid #000;
   border-radius: 10px;
   margin: 5px;
@@ -41,16 +49,10 @@ body {
 }
 
 a {
-  color: #FFF;
+  color: black;
   font-size: 18px;
 }
 
 a:hover {
   color: green;
-}
-
-.well {
-  border-color: grey;
-  background-color: grey;
-  color: grey;
 }
