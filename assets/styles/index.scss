@@ -32,7 +32,9 @@ body {
 
 .grid {
   border: 1px solid #000;
+  border-radius: 10px;
   margin: 5px;
+  padding-right: 100px;
   padding-left: 40%;
   margin-top: 5px;
   padding: 10px;
@@ -45,4 +47,10 @@ a {
 
 a:hover {
   color: green;
+}
+
+.well {
+  border-color: grey;
+  background-color: grey;
+  color: grey;
 }
