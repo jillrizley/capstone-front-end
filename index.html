@@ -7,6 +7,7 @@
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -14,8 +15,8 @@
 </head>
 
 <body>
-
-  <nav class="navbar navbar-fixed-top">
+<!-- NAV BAR -->
+  <nav class="navbar-inverse">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -32,9 +33,7 @@
           <li><a class="hidden" id="-changepwd-button" href="#" data-toggle="modal" data-target="#-changepwd-modal">Change Password</a></li>
         </ul>
       </div>
-      <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
   </nav>
   <!-- NAVBAR END -->
   <!-- ============================= -->
@@ -170,7 +169,7 @@
           <h4>Album Title</h4>
           <form id="createAlbumForm">
             <div class="form-group row">
-              <label for="shoeName" class="col-sm-2 col-form-label">Name</label>
+              <label for="albumName" class="col-sm-2 col-form-label">Title</label>
               <div class="col-sm-10">
                 <input type="text" id="addTitle" name="album[title]" class="form-control" placeholder="Title">
               </div>
@@ -227,6 +226,7 @@
     </div>
   </div>
 
+<!-- Album Container -->
     <div class="container" id="content"> </div>
 
 </body>
