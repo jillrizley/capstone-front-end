@@ -14,15 +14,15 @@ const add = function (data) {
   })
 }
 
-// const destroy = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/photos/' + data,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const destroy = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/photos/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 const show = function (data) {
   return $.ajax({
@@ -55,7 +55,7 @@ const index = function (data) {
 
 module.exports = {
   add,
-  // destroy,
+  destroy,
   show,
   update,
   index

@@ -3,10 +3,11 @@ const photoInputTemplate = require('../templates/photoInput.hbs')
 const photoTemplate = require('../templates/photo.hbs')
 
 const onGetSuccess = function (data) {
-  const $container = $(this).closest('[data-album-id]')
+  $('#container').html('')
+  const container = $(this).closest('[data-album-id]')
   data.photos.map((photo) => {
     console.log(photo)
-    $container.append(photoTemplate(photo))
+    container.append(photoTemplate(photo))
   })
 }
 
@@ -14,23 +15,21 @@ const onAddSuccess = function (data) {
   console.log('Photo added to album')
   $(this).remove()
 }
+
 const onAddError = function (error) {
   console.log(error)
   $('#createAlbumModal').modal('hide')
   $('#content').empty()
-  $('#errorNotify').css('display', 'block').text('There was a problem creating your album.')
-  $('#successNotify').css('display', 'none')
 }
 
 const onShowSuccess = function (data) {
-  $('#content').html('')
   data.albums.map(function (album) {
-    $('#content').append(photoTemplate(album))
+    $('#content').append(photoInputTemplate(album))
   })
 }
 
 const addPhotoInput = function () {
-  console.log('Adding photo input')
+  $('#well').html('')
   $(this).siblings('.photoUrls').append(photoInputTemplate)
 }
 
