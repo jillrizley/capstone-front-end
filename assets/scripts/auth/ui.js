@@ -5,6 +5,7 @@ const failure = (response) => {
 }
 
 const signUpSuccess = (response) => {
+  $('#-signup-modal-form')[0].reset()
 }
 
 const signUpError = (response) => {
@@ -20,12 +21,12 @@ const signInSuccess = (response) => {
   $('#-signup-button').addClass('hidden')
   $('#-logout-button').removeClass('hidden')
   $('#-changepwd-button').removeClass('hidden')
-  $('#locations-dropdown-button').removeClass('hidden')
   $('#signedin-header').removeClass('hidden')
   $('#createAlbumBtn').removeClass('hidden')
-  $('#needsSignInSuccess').show()
+  $('.needsSignInSuccess').show()
   $('#content').show()
   albumEvents.showAlbums()
+  $('#-signin-modal-form')[0].reset()
 }
 
 const signInError = (response) => {
@@ -37,13 +38,9 @@ const signInError = (response) => {
 
 const signOutSuccess = (response) => {
   store.user = undefined
-  store.location = undefined
-  store.locations = undefined
   $('#-signup-button').removeClass('hidden')
   $('#-logout-button').addClass('hidden')
   $('#-changepwd-button').addClass('hidden')
-  $('#locations-dropdown-button').addClass('hidden')
-  $('#location-display').addClass('hidden')
   $('#signedin-header').addClass('hidden')
   $('#needsSignInSuccess').hide()
   $('#content').hide()
@@ -64,12 +61,6 @@ const changePasswordError = (response) => {
   }, 1500)
 }
 
-// const forceSignIn = function () {
-//   if (!store.user) {
-//     $('#-signup-modal').modal('show')
-//   }
-// }
-
 module.exports = {
   signUpSuccess,
   signUpError,
@@ -79,6 +70,5 @@ module.exports = {
   signOutError,
   changePasswordSuccess,
   changePasswordError,
-  // forceSignIn,
   failure
 }

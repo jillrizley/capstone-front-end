@@ -2,9 +2,7 @@
 
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
-// const locationsApi = require('../locations/api')
 const ui = require('./ui')
-// const locationsUi = require('../locations/ui')
 
 // prevents page from refreshing and calls a function from ./api
 // the function it calls from ./api sends an ajax request to sign a new user up

@@ -13,15 +13,18 @@ const getPhotosByAlbum = function () {
 const addPhoto = function (e) {
   e.preventDefault()
   const data = getFormFields(e.target)
-  data.photo.albumId = $(this).closest('[data-album-id]').data('album-id')
+  const $album = $(this).closest('[data-album-id]')
+  data.photo.albumId = $album.data('album-id')
   api.add(data)
     .then(ui.onAddSuccess.bind(this))
+    .then(() => {
+      $album.find('.viewAlbumBtn').trigger('click')
+    })
     .catch(ui.onAddError)
 }
 
 const deletePhoto = function () {
-  const id = $(this).closest('[data-album-id]').data('photo-id')
-  console.log(`Deleting ...${id}`)
+  const id = $(this).closest('li').data('photo-id')
   api.destroy(id)
     .then(ui.onDestroySuccess.bind(this))
 }
