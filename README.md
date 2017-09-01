@@ -12,7 +12,7 @@
 - Bootstrap
 
 ## Links ##
-[Front End Deployed](https://jillrizley.github.io/capstone-front-end/
+[Front End Deployed](https://jillrizley.github.io/capstone-front-end/)
 
 [Back End Repo](https://github.com/jillrizley/capstone-back-end)
 
