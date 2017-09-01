@@ -26,33 +26,30 @@ body {
   background: url('./images/dog.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
+  font-variant-caps: small-caps;
   height: 800px;
   padding-bottom: 20%;
   padding-top: 10%;
 }
 
 .createAlbumBtn {
-    position: static;
-    border: 3px solid #73AD21;
+  border: 3px solid #73AD21;
+  position: static;
 }
 
 .grid {
   background-color: #FAFAFA;
-  color: grey;
   border: 1px solid #000;
   border-radius: 10px;
+  color: grey;
   margin: 5px;
-  padding-right: 100px;
-  padding-left: 40%;
   margin-top: 5px;
   padding: 10px;
+  padding-left: 40%;
+  padding-right: 100px;
 }
 
 a {
   color: black;
   font-size: 18px;
-}
-
-a:hover {
-  color: green;
 }
