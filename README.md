@@ -37,7 +37,8 @@ I began setting up the back end using Express and built out the user authorizati
 
 ## Wireframes ##
 https://wireframe.cc/UOODS8 - original wireframe
+
 https://wireframe.cc/KWXpIA-updated - updated wireframe
 
-## Descriptions of any unsolved problems or major hurdles you had to overcome ##
+## Descriptions of any unsolved problems ##
 I would really like for my app to be able to tell the difference between an image and a link to a website so that I could get a lightbox to open when images were clicked on, and a new browser window to open for links.
