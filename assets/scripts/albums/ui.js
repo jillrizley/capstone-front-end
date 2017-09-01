@@ -22,9 +22,14 @@ const onShowSuccess = function (data) {
   })
 }
 
-const onUpdateSuccess = function (data) {
+const onUpdateSuccess = function (albumId) {
   $('#editAlbumModal').modal('hide')
-  $('#content').append(albumTemplate(data.album))
+  const title = $('#editAlbumModal input[type=text]').val()
+  $('#editAlbumModal input[type=text]').val('')
+  const description = $('#editAlbumModal textarea').val()
+  $('#editAlbumModal textarea').val('')
+  $('[data-album-id=' + albumId + ']').find('h3').text(title)
+  $('[data-album-id=' + albumId + ']').find('p').text(description)
 }
 
 const onDestroySuccess = function () {

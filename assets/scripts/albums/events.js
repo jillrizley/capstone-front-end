@@ -22,7 +22,9 @@ const updateAlbum = function (e) {
   e.preventDefault()
   const data = getFormFields(e.target)
   api.update(data, data.album.id)
-    .then(ui.onUpdateSuccess)
+    .then((rtn) => {
+      ui.onUpdateSuccess(data.album.id)
+    })
 }
 
 const deleteAlbum = function () {
