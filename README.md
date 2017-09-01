@@ -12,11 +12,11 @@
 - Bootstrap
 
 ## Links ##
-[Front End Deployed] (https://jillrizley.github.io/capstone-front-end/
+[Front End Deployed](https://jillrizley.github.io/capstone-front-end/
 
-[Back End Repo] (https://github.com/jillrizley/capstone-back-end)
+[Back End Repo](https://github.com/jillrizley/capstone-back-end)
 
-[This Repo] (https://github.com/jillrizley/capstone-front-end)
+[This Repo](https://github.com/jillrizley/capstone-front-end)
 
 ## A couple paragraphs about the general approach you took ##
 I started this project thinking of it as a way to display a slideshow of images, but after some research into making that possible, I realized it was a bit out of the scope of possibility. I have instead created something that I think could be used in many ways. My app gives you the ability to make lists where you can name and save URLs, and when you access them it opens to a new window. This could be great for saving images, websites, recipes, studying tools, or even memes! Kind of like a bookmarks bar but you can sign-in and access your data from anywhere!
