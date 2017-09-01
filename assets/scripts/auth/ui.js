@@ -42,7 +42,7 @@ const signOutSuccess = (response) => {
   $('#-logout-button').addClass('hidden')
   $('#-changepwd-button').addClass('hidden')
   $('#signedin-header').addClass('hidden')
-  $('#needsSignInSuccess').hide()
+  $('.needsSignInSuccess').hide()
   $('#content').hide()
   // forceSignIn()
 }
