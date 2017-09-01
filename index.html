@@ -149,9 +149,10 @@
   <div class="jumbotron">
     <h1>Link Keeper</h1>
 <br/>
-    <button oninvalid="" id="needsSignInSuccess" id="createAlbumBtn" type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#createAlbumModal">
+    <button oninvalid="" id="createAlbumBtn" type="button" class="needsSignInSuccess btn btn-default btn-lg" data-toggle="modal" data-target="#createAlbumModal">
       Create Album
     </button>
+    <a href="#content" class="needsSignInSuccess btn btn-default btn-lg"> View Albums </a>
   </div>
 
     <!-- JUMBOTRON END -->
@@ -171,13 +172,13 @@
             <div class="form-group row">
               <label for="albumName" class="col-sm-2 col-form-label">Title</label>
               <div class="col-sm-10">
-                <input type="text" id="addTitle" name="album[title]" class="form-control" placeholder="Title">
+                <input type="text" id="addTitle" name="album[title]" class="form-control" placeholder="Title" required>
               </div>
             </div>
             <div class="form-group row">
               <label for="albumComments" class="col-sm-2 col-form-label">Comments</label>
               <div class="col-sm-10">
-                <textarea class="form-control" id="addComments" name="album[comments]" rows="2"></textarea>
+                <textarea class="form-control" id="addComments" name="album[comments]" rows="2" required></textarea>
               </div>
             </div>
             <div class="form-group row">
@@ -205,16 +206,16 @@
             <div class="form-group row">
               <label for="albumName" class="col-sm-2 col-form-label">Title</label>
               <div class="col-sm-10">
-                <input type="text" id="editTitle" name="album[title]" class="form-control" placeholder="Title">
+                <input type="text" id="editTitle" name="album[title]" class="form-control" placeholder="Title" required>
               </div>
             </div>
             <div class="form-group row">
               <label for="albumComments" class="col-sm-2 col-form-label">Comments</label>
               <div class="col-sm-10">
-                <textarea class="form-control" id="editComments" name="album[comments]" rows="2"></textarea>
+                <textarea class="form-control" id="editComments" name="album[comments]" rows="2" required></textarea>
               </div>
             </div>
-            <input type="hidden" id="updateAlbumId" name="album[id]" value="" />
+            <input type="hidden" id="updateAlbumId" name="album[id]" value=""/>
             <div class="form-group row">
               <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-default btn-sm">Update Album</button>
