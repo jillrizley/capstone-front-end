@@ -2,9 +2,9 @@
 
 ## SCREENSHOT ##
 
-![Image](landing.jpg)
+![Image](landing.png)
 
-![Image](scroll.jpg)
+![Image](scroll.png)
 
 ## Explanations of the technologies used ##
 - HTML 5 / CSS / SASS

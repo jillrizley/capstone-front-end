@@ -8,7 +8,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: grey;
+  background-color: #1D0D27;
 }
 
 #content,
@@ -23,7 +23,7 @@ body {
   }
 
 .jumbotron {
-  background: url('./images/dog.jpg') no-repeat center center fixed;
+  background: url('./images/cool.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
   font-variant-caps: small-caps;
