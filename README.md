@@ -2,7 +2,7 @@
 
 ## SCREENSHOT ##
 
-![Image](landing.png)
+![Image](http://imgur.com/axrWOxh)
 
 ![Image](scroll.png)
 
