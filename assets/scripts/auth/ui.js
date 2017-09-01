@@ -26,7 +26,7 @@ const signInSuccess = (response) => {
   $('.needsSignInSuccess').show()
   $('#content').show()
   albumEvents.showAlbums()
-  $('#-signin-modal-form')[0].reset()
+  $('#-signin-modal-form')[0].reset()r
 }
 
 const signInError = (response) => {
